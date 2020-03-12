@@ -1,7 +1,8 @@
 package idwall.desafio;
 
+import java.util.List;
+
 import idwall.desafio.string.IdwallFormatter;
-import idwall.desafio.string.StringFormatter;
 
 /**
  * Created by Rodrigo Catão Araujo on 06/02/2018.
@@ -41,11 +42,14 @@ public class Main {
         System.out.println("=========================");
 
         // Run IdwallFormatter
-        final StringFormatter sf = new IdwallFormatter();
-        String outputText = sf.format(text);
+        IdwallFormatter sf = new IdwallFormatter();
+        List<String> outputText = sf.format(text, limit);
 
         // Print output text
-        System.out.println("Output: ");
-        System.out.println(outputText);
+        System.out.println("Output: ");       
+		for(String result : outputText) {			
+			System.out.print(result + "\n");
+		}		
+		
     }
 }
